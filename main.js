@@ -1,18 +1,18 @@
 //javascript
 let lomake = document.forms['formNewKaveri'];
-lomake.addEventListener('submit', uusiListaElementti)
+lomake.addEventListener('submit', uusiNimiListalle)
 const kaveritListalla = new Array();
 
 
-function uusiListaElementti(event){
+function uusiNimiListalle(event){
     
     event.preventDefault()
 
     // Haetaan elementille nimi input-kentästä
-    let elementinNimi = document.querySelector('#main input[type="text"]').value;
+    let lisattavaNimi = document.querySelector('#main input[type="text"]').value;
 
      // huomautus
-     if(elementinNimi.length < 1){
+     if(lisattavaNimi.length < 1){
         alert('Kenttä on tyhjä, kirjoita nimi.');
         return;
     }
@@ -21,7 +21,7 @@ function uusiListaElementti(event){
         alert('Lista on täynnä!');
         return;
     } else {
-        kaveritListalla.push(elementinNimi);
+        kaveritListalla.push(lisattavaNimi);
         console.log(kaveritListalla);
     }
         
